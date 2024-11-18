@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LAB-2: Mouse Shift</title>
+</head>
+<body>
+<canvas id="webglcanvas" width="500" height="500"></canvas>
+
+<script>
+    var canvas = document.getElementById("webglcanvas");
+    var gl = canvas.getContext("webgl");
+
+    var vertexShaderSource =
+       `attribute vec3 a_coords;
+        uniform vec2 u_shift;
+        
+        void main() {
+            gl_Position = vec4(a_coords.xy + u_shift, a_coords.z, 1.0);
+        }`;
+
+    var fragmentShaderSource =
+       `precision mediump float;
+        uniform vec4 u_color;
+        
+        void main() {
+            gl_FragColor = u_color;
+        }`;
+
+    var vsh = gl.createShader(gl.VERTEX_SHADER);
+    gl.shaderSource(vsh, vertexShaderSource);
+    gl.compileShader(vsh);
+	
+    var fsh = gl.createShader(gl.FRAGMENT_SHADER);
+    gl.shaderSource(fsh, fragmentShaderSource);
+    gl.compileShader(fsh);
+    
+    var prog = gl.createProgram(); 
+    gl.attachShader(prog, vsh); 
+    gl.attachShader(prog, fsh);
+    gl.linkProgram(prog); 
+    gl.useProgram(prog); 
+
+    var a_coords_location = gl.getAttribLocation(prog, "a_coords");
+    var u_shift_location = gl.getUniformLocation(prog, "u_shift");
+    var u_color_location = gl.getUniformLocation(prog, "u_color");
+
+    var coords = new Float32Array([
+        -0.3, 0.0, 0.0,
+        -0.8, 0.0, 0.0,
+        -0.3, 0.5, 0.0,
+
+        // Right triangle
+        0.3, 0.0, 0.0,
+        0.8, 0.0, 0.0,
+        0.3, 0.5, 0.0,
+    ]);
+	
+    var a_coords_buffer = gl.createBuffer(); 
+    gl.bindBuffer(gl.ARRAY_BUFFER, a_coords_buffer); 
+    gl.bufferData(gl.ARRAY_BUFFER, coords, gl.STATIC_DRAW); 
+    gl.vertexAttribPointer(a_coords_location, 3, gl.FLOAT, false, 0, 0); 
+    gl.enableVertexAttribArray(a_coords_location);
+	
+    var colors = [
+        [1.0, 0.0, 0.0, 1.0], // Red
+        [0.0, 1.0, 0.0, 1.0], // Green
+        [0.0, 0.0, 1.0, 1.0]  // Blue
+    ];
+
+    var colorToggle = false; // To toggle between green and blue
+
+    function drawTriangles() {
+        gl.clearColor(0.75, 0.75, 0.75, 1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+
+        // First triangle color
+        var firstTriangleColor = colorToggle ? colors[2] : colors[1]; // Blue if toggle, else green
+        // Second triangle color
+        var secondTriangleColor = colorToggle ? colors[1] : colors[2]; // Green if toggle, else blue
+
+        // Draw the first triangle
+        gl.uniform4fv(u_color_location, firstTriangleColor);
+        gl.uniform2f(u_shift_location, 0.0, 0.0);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        
+        // Draw the second triangle
+        gl.uniform4fv(u_color_location, secondTriangleColor);
+        gl.uniform2f(u_shift_location, 0.0, 0.0);
+        gl.drawArrays(gl.TRIANGLES, 3, 3);
+    }
+
+    function updateColors() {
+        colorToggle = !colorToggle; // Toggle the color
+    }
+
+    function initialDraw() {
+        gl.clearColor(0.75, 0.75, 0.75, 1.0);
+        gl.clear(gl.COLOR_BUFFER_BIT);
+
+        // Set initial color to red for both triangles
+        gl.uniform4fv(u_color_location, colors[0]);
+        
+        // Draw the first triangle
+        gl.uniform2f(u_shift_location, 0.0, 0.0);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+        
+        // Draw the second triangle
+        gl.uniform2f(u_shift_location, 0.0, 0.0);
+        gl.drawArrays(gl.TRIANGLES, 3, 3);
+    }
+
+    // Initial draw with both triangles red
+    initialDraw();
+
+    canvas.onmousedown = function () {
+        updateColors();
+        drawTriangles();
+    };
+</script>
+</body>
+</html>
