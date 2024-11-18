@@ -1,0 +1,5 @@
+1 x1   global   4.6
+2 f1   global   
+3 x    f1       2.6
+4 main global 
+5 x    main     70

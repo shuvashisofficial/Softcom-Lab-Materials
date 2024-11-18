@@ -1,0 +1,13 @@
+1 float x = 2.5;
+2 void f1(float a, float t)
+3 {
+4  if (a<<t){
+5  a = 3.0;
+6  }
+7  else if(a=>t){
+8  t = 3.0;
+9  }
+10  else if(a==t){
+11  x = a;
+12  } 
+13 }

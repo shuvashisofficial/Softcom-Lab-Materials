@@ -1,0 +1,10 @@
+#include<stdio.h>
+void main()
+{
+   int p, q, *r, *s;
+   int *t = &p;
+   double *e;
+   int n = p*q;
+   printf("Value of t is %d",
+t);
+}

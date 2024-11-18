@@ -1,0 +1,13 @@
+float x = 2.5;
+void f1(float a, float t)
+{
+ if (a<<t){
+ a = 3.0;
+ }
+ else if(a=>t){
+ t = 3.0;
+ }
+ else if(a==t){
+ x = a;
+ } 
+}

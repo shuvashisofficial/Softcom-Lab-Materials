@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int add(int a, int b, int c){
+return a+b+c;
+}
+
+int main(){
+int a, b, c;
+scanf("%d%d%d",&a,&b,&c);
+int sum add(a,b,c);
+if((sum % 23)==0)
+printf("Sum %d is even", sum);
+return 0;
+}
