@@ -1,4 +1,4 @@
-# University-All-Codes
+# University-All-Materials
 
 This repository contains resources and code files from various university lab courses completed during my Bachelor of Science journey. Below is an overview of each course and what I learned throughout the program.
 
@@ -44,6 +44,15 @@ This lab focused on neural networks, fuzzy logic, and evolutionary algorithms. I
 
 ---
 
+## 4.2 Semester Final Notes
+In this folder, I have compiled all my notes, slides, and study materials prepared during my 4.2 semester final exams. These resources significantly helped me score well in my exams. They include:
+- Comprehensive lecture notes
+- Key points and summaries for quick revision
+- Slides used during preparation
+These materials are particularly helpful for anyone preparing for exams or revising similar topics.
+
+---
+
 ## Contact Information
 
 For further details or inquiries, you can contact:
@@ -58,3 +67,5 @@ Email: [shuvashisofficial@gmail.com](mailto:shuvashisofficial@gmail.com)
 This repository is licensed under the [MIT License](LICENSE).
 
 ---
+
+You can replace this updated README in your repository to reflect the latest addition. Let me know if you'd like further refinements!
