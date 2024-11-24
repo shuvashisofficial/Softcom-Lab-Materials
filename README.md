@@ -1,9 +1,23 @@
 # University-All-Materials
 
-This repository contains resources and code files from various university lab courses completed during my Bachelor of Science journey. Below is an overview of each course and what I learned throughout the program.
+This repository serves as a comprehensive archive of resources, code files, and study materials from my Bachelor of Science journey. It includes lab projects, preparation files, and final exam notes from various university courses. Each section highlights the key concepts, skills, and technologies I mastered, reflecting my hands-on experience and academic growth throughout the program. Whether you're a student, educator, or enthusiast, you'll find valuable insights and resources across multiple domains of computer science.
+
+## 4.1 Semester Final Notes
+This folder contains all preparation files and materials for my 4.1 semester finals. It includes:
+- Notes taken during the semester
+- Summaries and key topics for quick revision
+- Slides used during exam preparation  
+These files served as a comprehensive resource for effectively preparing and performing well in my exams.
 
 ---
+## 4.2 Semester Final Notes
+In this folder, I have compiled all my notes, slides, and study materials prepared during my 4.2 semester final exams. These resources significantly helped me score well in my exams. They include:
+- Comprehensive lecture notes
+- Key points and summaries for quick revision
+- Slides used during preparation
+These materials are particularly helpful for anyone preparing for exams or revising similar topics.
 
+---
 ## Artificial Intelligence Lab
 This lab helped me understand the foundations of Artificial Intelligence and its practical applications. I learned about machine learning, deep learning, and transfer learning techniques. I developed projects on image classification, feature reduction, and game-based AI systems such as Tic Tac Toe. Key tools included Python, TensorFlow, and Keras.
 
@@ -44,14 +58,6 @@ This lab focused on neural networks, fuzzy logic, and evolutionary algorithms. I
 
 ---
 
-## 4.2 Semester Final Notes
-In this folder, I have compiled all my notes, slides, and study materials prepared during my 4.2 semester final exams. These resources significantly helped me score well in my exams. They include:
-- Comprehensive lecture notes
-- Key points and summaries for quick revision
-- Slides used during preparation
-These materials are particularly helpful for anyone preparing for exams or revising similar topics.
-
----
 
 ## Contact Information
 
